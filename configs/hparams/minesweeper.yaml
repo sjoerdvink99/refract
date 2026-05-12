@@ -1,0 +1,128 @@
+dataset: minesweeper
+best_val_acc: 0.913449
+config:
+  hidden_dim: 128
+  gate_hidden_dim: 64
+  dropout: 0.2
+  lr: 0.005
+  weight_decay: 0.0
+  lambda_align: 0.01
+  lambda_smooth: 0.0
+  lambda_expert_aux: 0.1
+  aux_floor: 0.3
+  T_gate_start: 2.0
+  T_gate_anneal: 50
+  epochs: 300
+  patience: 100
+  drop_edge_p: 0.2
+  lambda_entropy: 0.05
+  lambda_z_loss: 0.005
+  grad_clip: 2.0
+  warmup_epochs: 20
+metadata:
+  n_configs: 12
+  n_val_splits: 2
+  seed: 42
+  device: mps
+  tuned_at: '2026-05-15T16:04:41.325188+00:00'
+  top5:
+  - val_acc: 0.913448828125
+    config:
+      hidden_dim: 128
+      gate_hidden_dim: 64
+      dropout: 0.2
+      lr: 0.005
+      weight_decay: 0.0
+      lambda_align: 0.01
+      lambda_smooth: 0.0
+      lambda_expert_aux: 0.1
+      aux_floor: 0.3
+      T_gate_start: 2.0
+      T_gate_anneal: 50
+      epochs: 300
+      patience: 100
+      drop_edge_p: 0.2
+      lambda_entropy: 0.05
+      lambda_z_loss: 0.005
+      grad_clip: 2.0
+      warmup_epochs: 20
+  - val_acc: 0.9120140625
+    config:
+      hidden_dim: 64
+      gate_hidden_dim: 32
+      dropout: 0.2
+      lr: 0.01
+      weight_decay: 0.0
+      lambda_align: 0.1
+      lambda_smooth: 0.05
+      lambda_expert_aux: 0.2
+      aux_floor: 0.3
+      T_gate_start: 5.0
+      T_gate_anneal: 150
+      epochs: 300
+      patience: 100
+      drop_edge_p: 0.2
+      lambda_entropy: 0.0
+      lambda_z_loss: 0.01
+      grad_clip: 2.0
+      warmup_epochs: 10
+  - val_acc: 0.9061874999999999
+    config:
+      hidden_dim: 128
+      gate_hidden_dim: 128
+      dropout: 0.5
+      lr: 0.001
+      weight_decay: 0.0001
+      lambda_align: 0.1
+      lambda_smooth: 0.005
+      lambda_expert_aux: 0.15
+      aux_floor: 0.3
+      T_gate_start: 1.0
+      T_gate_anneal: 50
+      epochs: 300
+      patience: 100
+      drop_edge_p: 0.1
+      lambda_entropy: 0.05
+      lambda_z_loss: 0.02
+      grad_clip: 1.0
+      warmup_epochs: 20
+  - val_acc: 0.9049375
+    config:
+      hidden_dim: 64
+      gate_hidden_dim: 128
+      dropout: 0.2
+      lr: 0.001
+      weight_decay: 0.001
+      lambda_align: 0.01
+      lambda_smooth: 0.01
+      lambda_expert_aux: 0.2
+      aux_floor: 0.5
+      T_gate_start: 2.0
+      T_gate_anneal: 100
+      epochs: 300
+      patience: 100
+      drop_edge_p: 0.1
+      lambda_entropy: 0.1
+      lambda_z_loss: 0.01
+      grad_clip: 1.0
+      warmup_epochs: 20
+  - val_acc: 0.9048343750000001
+    config:
+      hidden_dim: 64
+      gate_hidden_dim: 32
+      dropout: 0.5
+      lr: 0.005
+      weight_decay: 0.001
+      lambda_align: 0.05
+      lambda_smooth: 0.005
+      lambda_expert_aux: 0.1
+      aux_floor: 0.2
+      T_gate_start: 1.0
+      T_gate_anneal: 150
+      epochs: 300
+      patience: 100
+      drop_edge_p: 0.2
+      lambda_entropy: 0.01
+      lambda_z_loss: 0.005
+      grad_clip: 0.5
+      warmup_epochs: 20

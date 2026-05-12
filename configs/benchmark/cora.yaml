@@ -1,0 +1,31 @@
+run:
+  name: "cora_seed0"
+  seed: 0
+
+dataset:
+  type: "real_world"
+  name: "cora"
+
+model:
+  hidden_dim: 128
+  dropout: 0.5
+  gate_hidden_dim: 32
+
+training:
+  epochs: 300
+  patience: 50
+  lr: 0.01
+  weight_decay: 5.0e-4
+  lambda_align: 0.01
+  lambda_smooth: 0.01
+  lambda_expert_aux: 0.15
+  aux_floor: 0.5
+  T_gate_start: 2.0
+  T_gate_anneal: 100
+
+counterfactuals:
+  enabled: false
+
+projection:
+  method: pca
+  seed: 0

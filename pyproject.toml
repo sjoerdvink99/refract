@@ -1,0 +1,84 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "refract"
+version = "0.1.0"
+description = "Mixture-of-experts GNN with regime-aware routing"
+authors = [{ name = "Refract Authors" }]
+keywords = ["graph neural networks", "heterophily", "mixture of experts", "NeurIPS"]
+classifiers = [
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
+    "pydantic>=2.7.0",
+    "pydantic-settings>=2.3.0",
+    "numpy>=1.26.0",
+    "pandas>=2.2.0",
+    "pyarrow>=16.0.0",
+    "scikit-learn>=1.4.0",
+    "networkx>=3.3",
+    "typer>=0.12.0",
+    "pyyaml>=6.0.1",
+    "torch>=2.3.0",
+    "torch-geometric>=2.5.0",
+    "torch-sparse",
+    "torch-scatter",
+    "scipy>=1.13.0",
+    "matplotlib>=3.8.0",
+    "seaborn>=0.13.0",
+]
+
+[project.optional-dependencies]
+umap = ["umap-learn>=0.5.6"]
+dev = [
+    "pytest>=8.2.0",
+    "pytest-asyncio>=0.23.0",
+    "ruff>=0.4.0",
+    "mypy>=1.10.0",
+    "httpx>=0.27.0",
+]
+
+[project.scripts]
+refract-download = "scripts.download:app"
+refract-tune = "scripts.tune:app"
+refract-train = "scripts.train:app"
+refract-eval = "scripts.eval:app"
+
+[tool.setuptools.packages.find]
+where = ["src", "."]
+include = ["refract*", "schemas*", "scripts*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B", "SIM"]
+ignore = [
+    "E501",   # line too long
+    "F401",   # unused import
+    "F403",   # star import
+    "N811",   # constant imported as non-constant (e.g. APPNP as APPNPProp)
+    "N812",   # lowercase imported as non-lowercase (e.g. F = torch.nn.functional)
+    "N803",   # argument name should be lowercase (math notation: K, eA, eT)
+    "N806",   # variable in function should be lowercase (math notation: G, eA, eT)
+    "B008",   # function call in default argument (Typer CLI pattern)
+]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+pythonpath = ["src", "."]
+

@@ -1,0 +1,37 @@
+run:
+  name: synthetic_local_regime_v1_medium_seed0
+  output_dir: artifacts/runs
+  seed: 0
+
+dataset:
+  type: synthetic_local_regime
+  num_nodes: 10000
+  num_classes: 5
+  feature_dim: 64
+  num_patches: 20
+
+model:
+  hidden_dim: 128
+  dropout: 0.3
+  gate_hidden_dim: 32
+
+training:
+  epochs: 500
+  patience: 75
+  lr: 0.001
+  weight_decay: 0.0005
+  lambda_align: 0.05
+  lambda_smooth: 0.01
+
+counterfactuals:
+  enabled: true
+  modes:
+    - mean_feature_mask
+    - ego_edge_mask
+    - attribute_expert_only
+    - topology_expert_only
+
+projection:
+  method: umap
+  fallback: pca
+  seed: 0

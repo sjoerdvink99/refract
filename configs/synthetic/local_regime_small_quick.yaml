@@ -1,0 +1,30 @@
+run:
+  name: "synthetic_quick_seed0"
+  seed: 0
+
+dataset:
+  type: synthetic_local_regime
+  num_nodes: 1500
+  num_classes: 3
+  feature_dim: 32
+  num_patches: 8
+
+model:
+  hidden_dim: 64
+  dropout: 0.3
+  gate_hidden_dim: 32
+
+training:
+  epochs: 300
+  patience: 50
+  lr: 0.001
+  weight_decay: 0.0005
+  lambda_align: 0.05
+  lambda_smooth: 0.01
+
+counterfactuals:
+  enabled: false
+
+projection:
+  method: pca
+  seed: 0

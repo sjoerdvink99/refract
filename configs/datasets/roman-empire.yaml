@@ -1,0 +1,16 @@
+config:
+  hidden_dim: 256
+  gate_hidden_dim: 64
+  dropout: 0.5
+  lr: 0.005
+  weight_decay: 0.0005
+  lambda_align: 0.01
+  lambda_smooth: 0.01
+  lambda_expert_aux: 0.15
+  aux_floor: 0.5
+  T_gate_start: 2.0
+  T_gate_anneal: 150
+  epochs: 500
+  patience: 75
+  drop_edge_p: 0.0
+  lambda_entropy: 0.0

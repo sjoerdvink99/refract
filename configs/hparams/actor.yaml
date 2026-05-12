@@ -1,0 +1,128 @@
+dataset: actor
+best_val_acc: 0.396711
+config:
+  hidden_dim: 256
+  gate_hidden_dim: 32
+  dropout: 0.7
+  lr: 0.05
+  weight_decay: 0.001
+  lambda_align: 0.0
+  lambda_smooth: 0.05
+  lambda_expert_aux: 0.2
+  aux_floor: 0.2
+  T_gate_start: 1.0
+  T_gate_anneal: 100
+  epochs: 800
+  patience: 75
+  drop_edge_p: 0.1
+  lambda_entropy: 0.05
+  lambda_z_loss: 0.005
+  grad_clip: 0.5
+  warmup_epochs: 10
+metadata:
+  n_configs: 10
+  n_val_splits: 1
+  seed: 42
+  device: mps
+  tuned_at: '2026-05-15T15:54:51.242623+00:00'
+  top5:
+  - val_acc: 0.39671052631578946
+    config:
+      hidden_dim: 256
+      gate_hidden_dim: 32
+      dropout: 0.7
+      lr: 0.05
+      weight_decay: 0.001
+      lambda_align: 0.0
+      lambda_smooth: 0.05
+      lambda_expert_aux: 0.2
+      aux_floor: 0.2
+      T_gate_start: 1.0
+      T_gate_anneal: 100
+      epochs: 800
+      patience: 75
+      drop_edge_p: 0.1
+      lambda_entropy: 0.05
+      lambda_z_loss: 0.005
+      grad_clip: 0.5
+      warmup_epochs: 10
+  - val_acc: 0.39342105263157895
+    config:
+      hidden_dim: 256
+      gate_hidden_dim: 32
+      dropout: 0.7
+      lr: 0.0005
+      weight_decay: 0.0005
+      lambda_align: 0.05
+      lambda_smooth: 0.005
+      lambda_expert_aux: 0.05
+      aux_floor: 0.2
+      T_gate_start: 1.0
+      T_gate_anneal: 50
+      epochs: 800
+      patience: 75
+      drop_edge_p: 0.1
+      lambda_entropy: 0.0
+      lambda_z_loss: 0.001
+      grad_clip: 1.0
+      warmup_epochs: 10
+  - val_acc: 0.3894736842105263
+    config:
+      hidden_dim: 256
+      gate_hidden_dim: 32
+      dropout: 0.3
+      lr: 0.001
+      weight_decay: 0.0005
+      lambda_align: 0.0
+      lambda_smooth: 0.005
+      lambda_expert_aux: 0.0
+      aux_floor: 0.3
+      T_gate_start: 2.0
+      T_gate_anneal: 200
+      epochs: 800
+      patience: 75
+      drop_edge_p: 0.0
+      lambda_entropy: 0.05
+      lambda_z_loss: 0.01
+      grad_clip: 0.5
+      warmup_epochs: 10
+  - val_acc: 0.3894736842105263
+    config:
+      hidden_dim: 256
+      gate_hidden_dim: 64
+      dropout: 0.5
+      lr: 0.001
+      weight_decay: 0.0001
+      lambda_align: 0.05
+      lambda_smooth: 0.05
+      lambda_expert_aux: 0.0
+      aux_floor: 0.0
+      T_gate_start: 1.0
+      T_gate_anneal: 100
+      epochs: 800
+      patience: 50
+      drop_edge_p: 0.2
+      lambda_entropy: 0.1
+      lambda_z_loss: 0.001
+      grad_clip: 1.0
+      warmup_epochs: 20
+  - val_acc: 0.3875
+    config:
+      hidden_dim: 256
+      gate_hidden_dim: 128
+      dropout: 0.7
+      lr: 0.0005
+      weight_decay: 0.0001
+      lambda_align: 0.05
+      lambda_smooth: 0.005
+      lambda_expert_aux: 0.05
+      aux_floor: 0.3
+      T_gate_start: 2.0
+      T_gate_anneal: 150
+      epochs: 800
+      patience: 100
+      drop_edge_p: 0.2
+      lambda_entropy: 0.01
+      lambda_z_loss: 0.01
+      grad_clip: 0.5
+      warmup_epochs: 5

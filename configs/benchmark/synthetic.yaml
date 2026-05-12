@@ -1,0 +1,34 @@
+run:
+  name: "synthetic_seed0"
+  seed: 0
+
+dataset:
+  type: synthetic_local_regime
+  num_nodes: 3000
+  num_classes: 3
+  feature_dim: 32
+  num_patches: 12
+
+model:
+  hidden_dim: 64
+  dropout: 0.3
+  gate_hidden_dim: 32
+
+training:
+  epochs: 300
+  patience: 50
+  lr: 0.001
+  weight_decay: 0.0005
+  lambda_align: 0.05
+  lambda_smooth: 0.01
+  lambda_expert_aux: 0.05
+  aux_floor: 0.0
+  T_gate_start: 2.0
+  T_gate_anneal: 100
+
+counterfactuals:
+  enabled: false
+
+projection:
+  method: pca
+  seed: 0

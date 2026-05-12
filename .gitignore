@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+dist/
+*.egg-info/
+.mypy_cache/
+.ruff_cache/
+
+# Datasets (large, auto-downloaded via scripts/download.py)
+data/
+
+# Results (eval outputs, sweep logs — auto-generated, not committed)
+results/
+
+# Legacy experiment artifacts (all gitignored; results/ is the new home)
+artifacts/
+
+# Generated paper assets (auto-generated via scripts/make_figures.py)
+paper/figures/*.pdf
+paper/figures/*.png
+paper/figures/*.svg
+!paper/figures/.gitkeep
+paper/tables/*.tex
+
+# Frontend
+app/frontend/node_modules/
+app/frontend/dist/
+
+# Misc
+.env
+*.pt
+*.ckpt
+.DS_Store
+.claude/
